@@ -17,6 +17,10 @@
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  NOTE: In several places, this code presents some modifications compared 
+  to the original code. Those modification provide the compatibility between 
+  the provided verification system and are necessary. Armin Zare Zadeh
 */
 
 

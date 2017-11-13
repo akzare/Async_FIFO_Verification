@@ -77,7 +77,7 @@ class scoreboard;
   // This method compares the output data flow from FIFO and compares them 
   // against the previously inserted data into class's internal queue.
   //
-  task checker();
+  task flow_checker();
   begin
     forever begin : self_checker
       @ (negedge bfm.rclk iff bfm.rinc);
@@ -87,7 +87,7 @@ class scoreboard;
       assert(bfm.rdata === verif_wdata) else $error("%dns : scoreboard::Checking failed: expected wdata = %h, rdata = %h", $time, verif_wdata, bfm.rdata);
     end : self_checker
   end
-  endtask : checker
+  endtask : flow_checker
 
 
   //
@@ -99,7 +99,7 @@ class scoreboard;
       monitor_full_state();
       monitor_empty_state();
       monitor_input_flow();
-      checker();
+      flow_checker();
     join_none
   endtask : execute
 
